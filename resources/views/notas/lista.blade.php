@@ -36,7 +36,7 @@
                                     <form method="POST" action="{{route('notas.eliminar',$item)}}" class="d-inline">
                                     @method('DELETE')
                                     @csrf
-                                    <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Esta seguro?')">Eliminar</button>
                                     </form>
                                 </td>
                             </tr>
