@@ -36,7 +36,27 @@
                                     <form method="POST" action="{{route('notas.eliminar',$item)}}" class="d-inline">
                                     @method('DELETE')
                                     @csrf
-                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Esta seguro?')">Eliminar</button>
+                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" 
+                                    data-target="#confirmacion">Eliminar</button>
+                                    <div class="modal fade" id="confirmacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Eliminacion</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                ¿Esta seguro de continuar?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        </div>
                                     </form>
                                 </td>
                             </tr>
