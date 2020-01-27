@@ -6,10 +6,7 @@ use Illuminate\Http\Request;
 use App\Nota;
 class NotaController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+   
     /**
      * Display a listing of the resource.
      *
@@ -23,6 +20,11 @@ class NotaController extends Controller
        return view('notas.lista',compact('notas')); 
     }
 
+    public function inicio()
+    {
+        $notas = Nota::all();
+        return view('welcome',compact('notas'));
+    }
     /**
      * Show the form for creating a new resource.
      *

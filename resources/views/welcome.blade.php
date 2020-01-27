@@ -83,15 +83,29 @@
                 <div class="title m-b-md">
                     Laravel
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="card">
+                    <div class="card-body">      
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                <th scope="col">Usuarios</th>
+                                <th scope="col">ID Nota</th>
+                                <th scope="col">Nota</th>
+                                <th scope="col">Descripcion</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($notas as $item)
+                                <tr>
+                                    <th scope="row">{{ $item->usuario }}</th>
+                                    <td>{{ $item->id }}</td>
+                                    <td>{{ $item->nombre }}</td>
+                                    <td>{{ $item->descripcion }}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
